@@ -130,16 +130,28 @@ tape('tests', function(test) {
 
   });
 
-  test.test('query with diacriticals should be deburred', function(t) {
+  test.test('finnish alphabet letters should be parsed correctly', function(t) {
     var parser = libpostalParser.create((query) => {
-      t.equal(query, 'query value');
+      t.equal(query, 'ääkkösiä');
       t.end();
       return [];
     });
 
-    var actual = parser.parse('q́ŭér̂ÿ v̆àl̂ū́ë');
+    var actual = parser.parse('ääkkösiä');
 
   });
+
+  test.test('northern sami alphabet letters work', function(t) {
+    var parser = libpostalParser.create((query) => {
+      t.equal(query, 'ŋčuođát');
+      t.end();
+      return [];
+    });
+
+    var actual = parser.parse('ŋčuođát');
+
+  });
+
 
   test.test('unknown component names should not cause any adverse issues', function(t) {
     var node_postal_mock = function(query) {
