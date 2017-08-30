@@ -1,4 +1,5 @@
 var logger = require('pelias-logger').get('text-analyzer');
+var _ = require('lodash');
 
 // mapping object from libpostal fields to pelias fields
 var field_mapping = {
