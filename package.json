@@ -25,12 +25,11 @@
     "joi": "^12.0.0",
     "lodash": "^4.17.4",
     "node-postal": "1.0.0",
-    "pelias-config": "2.13.0",
-    "pelias-logger": "0.3.1"
+    "pelias-config": "4.8.0",
+    "pelias-logger": "1.3.0"
   },
   "devDependencies": {
     "jshint": "^2.8.0",
-    "npm-check": "git://github.com/orangejulius/npm-check.git#disable-update-check",
     "pelias-mock-logger": "^1.1.1",
     "precommit-hook": "^3.0.0",
     "proxyquire": "^1.7.10",
@@ -39,9 +38,6 @@
     "tape": "^4.2.2"
   },
   "pre-commit": [
-    "lint",
-    "validate",
-    "test",
-    "check-dependencies"
+    "lint"
   ]
 }
